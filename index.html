@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: aquamarine;
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #conteudo {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #888;
+            max-width: 1400px;
+            margin: 20px auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        #fundo {
+            background-image: url('./19-10/Desp.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            color: #00FFFF; 
+            animation: neon 1s ease infinite; 
+
+        }
+
+        @keyframes neon {
+            0% {
+                color: #5fa3f1;
+            }
+            50% {
+                color: #1a92d8; /* Outra cor neon (verde) */
+            }
+            100% {
+                color: #0236a7;
+            }
+        }
+
+        ol {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #0236a7; 
+            text-decoration: none; 
+        }
+
+        a:hover {
+            color: #5fa3f1; /* Cor quando o mouse passa por cima */
+            text-decoration: underline; /* Adicione sublinhado no hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="fundo"></div>
+    <div id="conteudo">
+        <h1>Curso Despertar.Dev</h1>
+        <ol>
+            <li><a href="./19-10/Avaliação-Final-Modulo-html-e-Css/Avaliação Final Sobre.html">Avaliação Final Módulo Html e Css</a></li>
+            <li><a href="./19-10/Atividade-Posicionament-css/">Atividades Posicionamento Css</a></li>
+            <li><a href="./19-10/Logica-pratica/logicapratica.html">Lógica Prática</a></li>
+            <li><a href="./19-10/26-10/">Estruturas de Repetição</a></li>
+            
+        </ol>
+    </div>
+</body>
+</html>
