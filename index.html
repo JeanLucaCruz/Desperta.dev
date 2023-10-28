@@ -12,13 +12,14 @@
 
         #conteudo {
             background-color: rgba(255, 255, 255, 0.7);
-            padding: 20px;
+            padding: 50px;
             margin: 20px;
             border: 1px solid #888;
             max-width: 1400px;
-            margin: 20px auto;
+            margin: 50px;
+            border-radius: 10px;
             position: relative;
-            z-index: 1;
+            z-index: 0;
         }
         
         #fundo {
@@ -38,7 +39,6 @@
             text-align: center;
             color: #00FFFF; 
             animation: neon 1s ease infinite; 
-
         }
 
         @keyframes neon {
@@ -46,7 +46,7 @@
                 color: #5fa3f1;
             }
             50% {
-                color: #1a92d8; /* Outra cor neon (verde) */
+                color: #1a92d8; 
             }
             100% {
                 color: #0236a7;
@@ -69,21 +69,20 @@
         }
 
         a:hover {
-            color: #5fa3f1; /* Cor quando o mouse passa por cima */
-            text-decoration: underline; /* Adicione sublinhado no hover */
+            color: #5fa3f1; 
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div id="fundo"></div>
-    <div id="conteudo"></div>
+    <div id="conteudo">
         <h1>Curso Despertar.Dev</h1>
         <ol>
             <li><a href="./Avaliação Final Sobre.html">Avaliação Final Módulo Html e Css</a></li>
             <li><a href="./Atividade-Posicionament-css/Posicionamento-css.html">Atividades Posicionamento Css</a></li>
             <li><a href="./Logica-pratica/">Lógica Prática</a></li>
-            <li><a href="./26-10/lista-lista-atividades.html">Estruturas de Repetição</a></li>
-            
+            <li><a href="./26-10/lista-lista-atividades.html">Estruturas de Repetição</a></li>
         </ol>
     </div>
 </body>
