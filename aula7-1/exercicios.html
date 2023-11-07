@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios em JavaScript</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            background-attachment: fixed;
+            background-size: auto;
+            background-repeat: no-repeat;
+            
+        }
+
+        #conteudo {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #888;
+            max-width: 1400px;
+            margin: 20px auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        #fundo {
+            background-image: url('./Desp.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px;
+            border: 5px solid #fff; 
+            border-radius: 100px; 
+            padding: 2px;
+            background-color: #084aff; 
+        }
+
+        a {
+            color: #fff; 
+            text-decoration: none; 
+           
+        }
+
+        a:hover {
+             color: #3553a7;
+        }
+
+        h1 {
+            font-size: 39px;
+            text-align: center;
+            color: rgb(9, 5, 224);
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="fundo"></div>
+    <div id="conteudo">
+    <button onclick="executarExercicio(1)">Exercício 1</button>
+    <button onclick="executarExercicio(2)">Exercício 2</button>
+    <button onclick="executarExercicio(3)">Exercício 3</button>
+    <button onclick="executarExercicio(4)">Exercício 4</button>
+
+    <script>
+        //exercicio 1
+        function executarExercicio(exercicio) {
+            if (exercicio === 1) {
+                const produto = {
+                    preco: 90,
+                    descricao: "Mouse",
+                };
+                alert("Exercício 1 - Produto:\n" +
+                    "Preço do produto: " + produto.preco + "\n" +
+                    "Descrição do produto: " + produto.descricao);
+            } else if (exercicio === 2) {
+                const notebook = {
+                    Processador: "i7",
+                    Memoria: "16GB",
+                    Preco: 5000,
+                    HD: "1TB",
+                    SSD: "256GB",
+                };
+
+                //exercicio 2
+                let result2 = "Exercício 2 - Notebook:\n";
+                for (const atributo in notebook) {
+                    result2 += `${atributo}: ${notebook[atributo]}\n`;
+                }
+                alert(result2);
+            } else if (exercicio === 3) {
+                const alunos = [
+                    {
+                        nome: "Aluno1",
+                        notas: [7, 8],
+                    },
+                    {
+                        nome: "Aluno2",
+                        notas: [6, 9],
+                    }
+                ];
+
+                //exercicio3
+
+                let result3 = "Exercício 3 - Alunos:\n";
+
+                for (const aluno of alunos) {
+                    result3 += `Aluno - Nome: ${aluno.nome}, Notas: ${aluno.notas.join(", ")}\n`;
+
+                    let totalNotas = 0;
+                    for (const nota of aluno.notas) {
+                        totalNotas += nota;
+                    }
+
+                    const mediaAluno = totalNotas / aluno.notas.length;
+                    result3 += `Média do Aluno: ${mediaAluno}\n`;
+                }
+
+                let totalMedias = 0;
+                for (const aluno of alunos) {
+                    let totalNotas = 0;
+                    for (const nota of aluno.notas) {
+                        totalNotas += nota;
+                    }
+                    const mediaAluno = totalNotas / aluno.notas.length;
+                    totalMedias += mediaAluno;
+                }
+                const mediaTurma = totalMedias / alunos.length;
+
+                result3 += `Média da Turma: ${mediaTurma}\n`;
+                alert(result3);
+
+                //exercicio4
+            } else if (exercicio === 4) {
+                const pessoas = [];
+
+                while (true) {
+                    const pessoa = {};
+                    pessoa.nome = prompt("Informe o nome da pessoa: ");
+                    pessoa.idade = parseInt(prompt("Informe a idade da pessoa: "));
+                    pessoa.trabalhando = confirm("A pessoa está trabalhando?");
+
+                    if (pessoa.trabalhando) {
+                        pessoa.salario = parseFloat(prompt("Informe o salário da pessoa: "));
+                    }
+
+                    pessoas.push(pessoa);
+
+                    const continuar = confirm("Deseja continuar cadastrando?");
+                    if (!continuar) {
+                        break;
+                    }
+                }
+
+                let resultado4 = "Exercício 4 - Cadastro de Pessoas:\n";
+                resultado4 += "Pessoas desempregadas:\n";
+                for (const pessoa of pessoas) {
+                    if (!pessoa.trabalhando) {
+                        resultado4 += `Nome: ${pessoa.nome}, Idade: ${pessoa.idade}\n`;
+                    }
+                }
+
+                resultado4 += "Pessoas empregadas com salários menores que 2500:\n";
+                for (const pessoa of pessoas) {
+                    if (pessoa.trabalhando && pessoa.salario < 2500) {
+                        resultado4 += `Nome: ${pessoa.nome}, Idade: ${pessoa.idade}, Salário: ${pessoa.salario}\n`;
+                    }
+                }
+
+                resultado4 += "Pessoas empregadas com salários maiores que 2500:\n";
+                for (const pessoa of pessoas) {
+                    if (pessoa.trabalhando && pessoa.salario >= 2500) {
+                        resultado4 += `Nome: ${pessoa.nome}, Idade: ${pessoa.idade}, Salário: ${pessoa.salario}\n`;
+                    }
+                }
+                alert(resultado4);
+            }
+        }
+    </script>
+</body>
+</html>
