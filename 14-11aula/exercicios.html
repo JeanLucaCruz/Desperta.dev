@@ -74,45 +74,46 @@
      <div id = "fundo"> <h1>Sistema Crud de Veículos</h1></div>
      <div id = "conteudo"><h2>Obrigado por utilizar nossos serviços</h2></div>
     <script>
-        const carros = [];
-        
-        function exibirMenu() {
-          alert("Bem-vindo ao sistema de CRUD de veículos:\n\n" +
-                "No momento, o sistema tem " + carros.length + " carros cadastrados.\n\n" +
-                "Escolha uma das opções para interagir com o sistema:\n\n" +
-                "1 - Cadastrar veículo\n" +
-                "2 - Listar todos os veículos\n" +
-                "3 - Filtrar veículos por marca\n" +
-                "4 - Atualizar veículo\n" +
-                "5 - Remover veículo\n" +
-                "6 - Sair do sistema");
-        
-          const escolha = prompt("Digite o número da opção desejada:");
-        
+      const carros = [];
+
+      function exibirMenu() {
+          const escolha = prompt(
+              "Bem-vindo ao sistema de CRUD de veículos:\n\n" +
+              "No momento, o sistema tem " + carros.length + " carros cadastrados.\n\n" +
+              "Escolha uma das opções para interagir com o sistema:\n\n" +
+              "1 - Cadastrar veículo\n" +
+              "2 - Listar todos os veículos\n" +
+              "3 - Filtrar veículos por marca\n" +
+              "4 - Atualizar veículo\n" +
+              "5 - Remover veículo\n" +
+              "6 - Sair do sistema"
+          );
+
           switch (escolha) {
-            case '1':
-              cadastrarVeiculo();
-              break;
-            case '2':
-              listarVeiculos();
-              break;
-            case '3':
-              filtrarPorMarca();
-              break;
-            case '4':
-              atualizarVeiculo();
-              break;
-            case '5':
-              removerVeiculo();
-              break;
-            case '6':
-              alert("Obrigado por utilizar o sistema. Até logo!");
-              break;
-            default:
-              alert("Opção inválida. Tente novamente.");
-              exibirMenu();
+              case '1':
+                  cadastrarVeiculo();
+                  break;
+              case '2':
+                  listarVeiculos();
+                  break;
+              case '3':
+                  filtrarPorMarca();
+                  break;
+              case '4':
+                  atualizarVeiculo();
+                  break;
+              case '5':
+                  removerVeiculo();
+                  break;
+              case '6':
+                  alert("Obrigado por utilizar o sistema. Até logo!");
+                  break;
+              default:
+                  alert("Opção inválida. Tente novamente.");
+                  exibirMenu();
           }
-        }
+      }
+
         
         function cadastrarVeiculo() {
           const modelo = prompt("Digite o modelo do veículo:");
